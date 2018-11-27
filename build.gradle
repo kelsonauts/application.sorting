@@ -14,3 +14,15 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+jar {
+    baseName = 'sorting'
+    version =  '1.0.0'
+    manifest {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+}
+apply plugin: 'application'
+
+mainClassName = 'Main'
