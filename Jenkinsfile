@@ -13,13 +13,13 @@ node(nodeLabel) {
 		result = sh(script: """
 			${gradlePath}/gradle clean build
 			""",
-			returnStdout: true)
+			returnStdout: false)
 	}
 
 	stage('Test') {
 		result = sh(script: """
 			${gradlePath}/gradle test
-			""",
-			returnStdout: true)
+			"""
+		)
 	}
 }
