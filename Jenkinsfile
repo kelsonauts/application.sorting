@@ -19,6 +19,5 @@ node(nodeLabel) {
 			gradle test
 			""",
 			returnStdout: true)
-		}
 	}
 }
