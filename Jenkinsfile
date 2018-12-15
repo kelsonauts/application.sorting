@@ -7,16 +7,18 @@ node(nodeLabel) {
 		deleteDir()
 		checkout scm
 	}
+
+	gradlePath = "/opt/gradle/gradle-3.4.1/bin"
 	stage('Build') {
 		result = sh(script: """
-			gradle clean build
+			${gradlePath}/gradle clean build
 			""",
 			returnStdout: true)
 	}
 
 	stage('Test') {
 		result = sh(script: """
-			gradle test
+			${gradlePath}/gradle test
 			""",
 			returnStdout: true)
 	}
